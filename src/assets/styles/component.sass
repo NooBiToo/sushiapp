@@ -1,0 +1,53 @@
+.component
+  height: auto
+  width: 100%
+  border-bottom: 15px solid #efefef
+  background-color: #fff
+.component__title
+  padding: 20px
+  font-family: TT Norms Medium
+  font-size: 1.3rem
+  border-bottom: 2px solid #efefef
+.component__items 
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+.component__items-sets
+  grid-template-columns: repeat(2, 1fr)
+.item
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 25px
+  flex-direction: column
+  box-shadow: 2px 2px 2px 0 #efefef
+  box-sizing: border-box
+  &-sets
+    flex-direction: row
+  &__image
+    min-width: 250px
+    & img
+      width: 100%
+      height: auto
+  &__title
+    font-size: 1.8rem
+    font-family: TT Norms Medium
+  &__subtitle
+    font-size: 1rem
+    color: #aaa
+  &__description
+    color: #888
+  &__buy
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: 25px
+
+.buy__price
+  font-size: 1.5rem
+.buy__button
+  padding: 10px 25px
+  background-color: transparent
+  border: 1px solid #000
+  cursor: pointer
+  border-radius: 3px
+

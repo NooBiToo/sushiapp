@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "TT Norms Regular";
+  src: url("../fonts/TTNormsRegular/TTNorms-Regular.eot");
+  src: url("../fonts/TTNormsRegular/TTNorms-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNormsRegular/TTNorms-Regular.woff") format("woff"), url("../fonts/TTNormsRegular/TTNorms-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms Medium";
+  src: url("../fonts/TTNormsMedium/TTNorms-Medium.eot");
+  src: url("../fonts/TTNormsMedium/TTNorms-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNormsMedium/TTNorms-Medium.woff") format("woff"), url("../fonts/TTNormsMedium/TTNorms-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: TT Norms Regular;
+  background-color: #efefef;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.component {
+  height: auto;
+  width: 100%;
+  border-bottom: 15px solid #efefef;
+  background-color: #fff;
+}
+
+.component__title {
+  padding: 20px;
+  font-family: TT Norms Medium;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #efefef;
+}
+
+.component__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.component__items-sets {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  flex-direction: column;
+  box-shadow: 2px 2px 2px 0 #efefef;
+  box-sizing: border-box;
+}
+.item-sets {
+  flex-direction: row;
+}
+.item__image {
+  min-width: 250px;
+}
+.item__image img {
+  width: 100%;
+  height: auto;
+}
+.item__title {
+  font-size: 1.8rem;
+  font-family: TT Norms Medium;
+}
+.item__subtitle {
+  font-size: 1rem;
+  color: #aaa;
+}
+.item__description {
+  color: #888;
+}
+.item__buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.buy__price {
+  font-size: 1.5rem;
+}
+
+.buy__button {
+  padding: 10px 25px;
+  background-color: transparent;
+  border: 1px solid #000;
+  cursor: pointer;
+  border-radius: 3px;
+}
