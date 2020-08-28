@@ -1,6 +1,6 @@
 <template>
   <div class="telephone">
-    +7 (999) 999-99-99
+    <a href="tel:+79955533553" class="telephone__link">+7(995)553-35-53</a>
   </div>
 </template>
 
@@ -13,5 +13,12 @@ export default {
 <style>
 .telephone {
   font-size: 1.2rem;
+}
+.telephone__link {
+  color: inherit;
+  text-decoration: none;
+}
+.telephone__link:hover {
+  color: #f0c013;
 }
 </style>

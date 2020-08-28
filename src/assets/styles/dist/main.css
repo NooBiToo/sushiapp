@@ -12,6 +12,15 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "PerpetuaTitlingMT";
+  src: url("../fonts/PERTILI/PERTILI.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/PERTILI/PERTILI.eot?#iefix") format("embedded-opentype"), url("../fonts/PERTILI/PERTILI.ttf") format("truetype"), url("../fonts/PERTILI/PERTILI.woff") format("woff"), url("../fonts/PERTILI/PERTILI.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font-family: TT Norms Regular;
   background-color: #efefef;
@@ -20,7 +29,6 @@ body {
 * {
   margin: 0;
   padding: 0;
-  border: 0;
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
@@ -56,6 +64,9 @@ html, body {
 .component__items-sets {
   grid-template-columns: repeat(2, 1fr);
 }
+.component__items-sets .item {
+  flex-direction: row;
+}
 
 .item {
   display: flex;
@@ -65,9 +76,6 @@ html, body {
   flex-direction: column;
   box-shadow: 2px 2px 2px 0 #efefef;
   box-sizing: border-box;
-}
-.item-sets {
-  flex-direction: row;
 }
 .item__image {
   min-width: 250px;
@@ -93,15 +101,33 @@ html, body {
   justify-content: space-between;
   margin-top: 25px;
 }
+.item__weight {
+  color: #aaa;
+  font-size: 1.1rem;
+}
 
 .buy__price {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .buy__button {
-  padding: 10px 25px;
+  padding: 10px 15px;
   background-color: transparent;
-  border: 1px solid #000;
+  border: 2px solid #f0c013;
   cursor: pointer;
   border-radius: 3px;
+  color: #f0c013;
+  font-weight: 600;
+  transition: ease 0.3s;
+}
+.buy__button:hover {
+  background-color: #f0c013;
+  color: #000;
+  font-weight: normal;
+}
+.buy__button:active {
+  transform: scale(0.9);
+}
+.buy__button:focus {
+  outline: none;
 }

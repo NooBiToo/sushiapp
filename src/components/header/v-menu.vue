@@ -1,36 +1,36 @@
 <template>
   <nav class="nav__bar">
-    <ul class="nav__menu">
-      <!-- <li class="nav__item">
-        <router-link to="/" class="nav__link">Главная</router-link>
-      </li> -->
-      <li class="nav__item">
-        <router-link to="/sets" class="nav__link">Наборы</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="/rolls" class="nav__link">Роллы</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="/chicken" class="nav__link">Курица</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="/salads" class="nav__link">Салаты</router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="/ship" class="nav__link">Доставка и оплата</router-link>
-      </li>
-    </ul>
+    <div class="nav__bar-wrapper">
+      <ul class="nav__menu">
+        <li class="nav__item">
+          <router-link to="/sets" class="nav__link">Наборы</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="/rolls" class="nav__link">Роллы</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="/chicken" class="nav__link">Курица</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="/salads" class="nav__link">Салаты</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link to="/ship" class="nav__link"
+            >Доставка и оплата</router-link
+          >
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
   name: "vMenu",
-
-}
+};
 </script>
 
-<style>
+<style lang="scss">
 .nav__bar {
   display: block;
 }
@@ -49,13 +49,14 @@ export default {
   text-decoration: none;
   padding: 5px;
   color: inherit;
-  transition: .2s;
+  transition: 0.2s;
   text-transform: uppercase;
 }
 .nav__link:hover {
-  color: green;
+  color: #f0c013;
 }
-.nav__link-active, .router-link-exact-active {
+.nav__link-active,
+.router-link-exact-active {
   border-bottom: 2px solid #efefef;
 }
 </style>

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "TT Norms Regular";
+  src: url("../fonts/TTNormsRegular/TTNorms-Regular.eot");
+  src: url("../fonts/TTNormsRegular/TTNorms-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNormsRegular/TTNorms-Regular.woff") format("woff"), url("../fonts/TTNormsRegular/TTNorms-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms Medium";
+  src: url("../fonts/TTNormsMedium/TTNorms-Medium.eot");
+  src: url("../fonts/TTNormsMedium/TTNorms-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNormsMedium/TTNorms-Medium.woff") format("woff"), url("../fonts/TTNormsMedium/TTNorms-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PerpetuaTitlingMT";
+  src: url("../fonts/PERTILI/PERTILI.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/PERTILI/PERTILI.eot?#iefix") format("embedded-opentype"), url("../fonts/PERTILI/PERTILI.ttf") format("truetype"), url("../fonts/PERTILI/PERTILI.woff") format("woff"), url("../fonts/PERTILI/PERTILI.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

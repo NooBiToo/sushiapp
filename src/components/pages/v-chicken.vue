@@ -4,36 +4,42 @@
       <h1>Курица</h1>
     </div>
     <div class="component__items">
-      <div class="item">
-        <div class="item__image">
-          <img src="/assets/img/rolls/roll.jpg" alt="" />
-        </div>
-        <div class="item__main">
-          <div class="item__title">
-            <h2>Филадельфия Fire</h2>
-          </div>
-          <div class="item__subtitle">
-            230 гр.
-          </div>
-          <div class="item__description">
-            Опаленная семга, муксун, сливочный сыр, лист салата, икра тобико, соус «Терияки» , кунжут.
-          </div>
-          <div class="item__buy">
-            <div class="buy__price">430 Р.</div>
-            <button type="button" class="buy__button">
-              В корзину
-            </button>
-          </div>
-        </div>
-      </div>
+      <v-component-item 
+        v-for="(item, index) in CHICKEN"
+        :key="index"
+        :item="item"
+        @addToCart="addToCart"
+      />
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "Chicken"
+import VComponentItem from "./v-component-item.vue";
+import { mapActions, mapGetters } from "vuex";
 
+export default {
+  name: "Chicken",
+  components: {
+    VComponentItem
+  },
+  props: {
+    data: {
+      type: Array,
+      default: () => {
+        return [];
+      },
+    },
+  },
+  computed: {
+    ...mapGetters(["CHICKEN"]),
+  },
+  methods: {
+    ...mapActions(["ADD_TO_CART"]),
+    addToCart(data) {
+      this.ADD_TO_CART(data)
+    }
+  }
 }
 </script>
 

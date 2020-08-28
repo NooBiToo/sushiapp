@@ -1,26 +1,28 @@
 <template>
   <div class="products__all-list">
-    <sets/>
-    <rolls/>
-    <chicken/>
-    <salads/>
+    <v-sets />
+    <v-rolls />
+    <v-chicken />
+    <v-salads />
   </div>
 </template>
 
 <script>
-import Sets from "./v-sets";
-import Rolls from "./v-rolls";
-import Chicken from "./v-chicken";
-import Salads from "./v-salads";
+import VSets from "./v-sets";
+import VRolls from "./v-rolls";
+import VChicken from "./v-chicken";
+import VSalads from "./v-salads";
 
 export default {
   name: "VAllProducts",
   components: {
-    Sets,
-    Rolls,
-    Chicken,
-    Salads
-  }
+    VSets,
+    VRolls,
+    VChicken,
+    VSalads
+  },
+  props: {
+  },
 }
 </script>
 
