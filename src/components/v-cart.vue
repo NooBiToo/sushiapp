@@ -326,6 +326,8 @@ export default {
     padding: 0;
     max-height: calc(100% - 170px);
     height: calc(100% - 170px);
+    grid-gap: 0;
+    grid-auto-rows: max-content;
   }
   .cart-item {
     padding: 15px 0;
