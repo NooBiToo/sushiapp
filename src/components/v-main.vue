@@ -72,4 +72,9 @@ export default {
     margin-top: 75px;
   }
 }
+@media (max-width: 550px) {
+  .main {
+    margin-top: 80px;
+  }
+}
 </style>

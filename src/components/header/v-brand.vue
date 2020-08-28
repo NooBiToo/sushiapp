@@ -25,14 +25,15 @@ export default {
   font-family: PerpetuaTitlingMT;
   font-weight: 600;
 }
-.brand__title > .nav__link-active, .router-link-exact-active {
-  border: none!important;
+.brand__title > .nav__link-active,
+.router-link-exact-active {
+  border: none !important;
 }
 .brand__subtitle {
   display: block;
   font-size: 1rem;
   text-align: center;
-  transition: .5s;
+  transition: 0.5s;
   font-weight: normal;
 }
 @media (max-width: 1200px) {
@@ -41,6 +42,11 @@ export default {
   }
   .brand__subtitle {
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 495px) {
+  .brand__title {
+    font-size: 1.5rem;
   }
 }
 </style>

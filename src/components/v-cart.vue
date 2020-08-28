@@ -9,7 +9,7 @@
         <span v-if="!CART.length">пуста</span>
       </div>
     </div>
-    <div class="cart__main" :class="{ cart__main_open: isActive }">
+    <div class="cart__main">
       <div class="cart__items" v-if="CART.length">
         <v-cart-item
           v-for="(item, index) in CART"
@@ -266,15 +266,20 @@ export default {
 @media (max-width: 1600px) {
   .cart {
     position: fixed;
-    bottom: -3px;
     left: 0;
+    bottom: calc(-100% + 53px);
     width: 100%;
     min-width: 100%;
     margin: 0;
-  }
-  .cart_open {
     height: 100%;
     max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+  }
+  .cart_open {
     bottom: 0;
   }
   .cart__main {
@@ -283,21 +288,23 @@ export default {
     position: absolute;
     width: 100%;
     transition: 0.5s;
-  }
-  .cart__main_open {
     bottom: 0;
     position: relative;
-    transition: 0.5s;
     height: calc(100% - 57px);
+    width: 600px;
   }
   .cart__title {
     display: flex;
     justify-content: center;
-    background-color: #f7de82;
+    background-color: #fcd83c;
     padding: 15px;
+    width: 100%;
   }
   .cart__title:hover {
     cursor: pointer;
+  }
+  .cart__title:active {
+    background-color: #f0c013;
   }
   .cart__count {
     display: block;
@@ -317,8 +324,8 @@ export default {
   }
   .cart__items {
     padding: 0;
-    max-height: calc(100% - 101px);
-    height: calc(100% - 101px);
+    max-height: calc(100% - 170px);
+    height: calc(100% - 170px);
   }
   .cart-item {
     padding: 15px 0;
@@ -333,10 +340,16 @@ export default {
     display: flex;
     justify-self: center;
   }
+  .cart__promo-code {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
 }
 @media (max-width: 776px) {
   .cart__main {
     padding: 0;
+    width: 100%;
   }
   .cart-item {
     grid-template-columns: 1fr 2fr 1fr 1fr;
@@ -344,9 +357,22 @@ export default {
   }
 }
 @media (max-width: 495px) {
+  .cart {
+    bottom: calc(-100% + 45px);
+  }
+  .cart__main {
+    height: calc(100% - 47px);
+  }
   .cart-item {
     grid-template-columns: 1fr 3fr 1fr 1fr;
     grid-gap: 0px;
+  }
+  .cart__title {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+  .cart_open {
+    bottom: 0;
   }
 }
 </style>

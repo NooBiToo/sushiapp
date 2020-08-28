@@ -118,35 +118,10 @@ export default {
     justify-self: end;
   }
 }
-@media (max-width: 620px) {
-  .nav__bar-wrapper {
-    position: relative;
-    overflow-y: scroll;
-    width: 95%;
-    margin: 0 auto;
-  }
-  .nav__bar {
-    position: relative;
-  }
-  .nav__bar:before, .nav__bar:after {
-    position: absolute;
-    display: block;
-  }
-  .nav__bar:before {
-    content: '⋖';
-    left: 0;
-    top: 0;
-  }
-  .nav__bar:after {
-    content: '⋗';
-    right: -5px;
-    top: 0;
-  }
-  .nav__menu {
-    width: 620px;
-  } 
-}
 @media (max-width: 550px) {
+  .header {
+    padding-top: 5px;
+  }
   .nav__menu {
     width: 600px;
   } 

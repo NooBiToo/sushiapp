@@ -59,4 +59,31 @@ export default {
 .router-link-exact-active {
   border-bottom: 2px solid #efefef;
 }
+@media (max-width: 620px) {
+  .nav__bar-wrapper {
+    position: relative;
+    overflow-y: scroll;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .nav__bar {
+    position: relative;
+  }
+  .nav__bar:before, .nav__bar:after {
+    position: absolute;
+    display: block;
+    top: -1px;
+  }
+  .nav__bar:before {
+    content: '⋖';
+    left: -5px;
+  }
+  .nav__bar:after {
+    content: '⋗';
+    right: -5px;
+  }
+  .nav__menu {
+    width: 620px;
+  } 
+}
 </style>
