@@ -122,8 +122,19 @@ export default {
   .header {
     padding-top: 5px;
   }
+  .header__container {
+    transition: .2s;
+    top: 0;
+  }
+  .header__sticky {
+    top: -35px;
+    position: fixed;
+    background: #fff;
+    transition: .1s;
+    padding-bottom: 4px;
+  }
   .nav__menu {
     width: 600px;
-  } 
+  }
 }
 </style>

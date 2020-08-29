@@ -8,6 +8,7 @@
         }}</span>
         <span v-if="!CART.length">пуста</span>
       </div>
+      <div class="close-icon" v-if="isActive"></div>
     </div>
     <div class="cart__main">
       <div class="cart__items" v-if="CART.length">
@@ -321,6 +322,19 @@ export default {
     border-radius: 50%;
     position: relative;
     font-size: 0.9rem;
+  }
+  .close-icon:before, .close-icon:after {
+    font-size: 1.6rem;
+    position: absolute;
+    top: 8px;
+  }
+  .close-icon:before {
+    content: '↓';
+    left: 15px;
+  }
+  .close-icon:after {
+    content: '↓';
+    right: 15px;
   }
   .cart__items {
     padding: 0;

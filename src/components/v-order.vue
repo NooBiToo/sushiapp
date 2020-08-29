@@ -194,4 +194,9 @@ export default {
   padding: 20px;
   background-color: #f0c013;
 }
+@media (max-width: 495px) {
+  .modal-container {
+    width: 350px;
+  }
+}
 </style>
