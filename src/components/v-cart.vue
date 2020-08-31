@@ -8,7 +8,9 @@
         }}</span>
         <span v-if="!CART.length">пуста</span>
       </div>
-      <div class="close-icon" v-if="isActive"></div>
+      <div class="close-icon" v-if="isActive">
+        <img src="/assets/icons/arrow-back.svg" alt="go to Back button">
+      </div>
     </div>
     <div class="cart__main">
       <div class="cart__items" v-if="CART.length">
@@ -323,18 +325,16 @@ export default {
     position: relative;
     font-size: 0.9rem;
   }
-  .close-icon:before, .close-icon:after {
-    font-size: 1.6rem;
+  .close-icon {
     position: absolute;
-    top: 8px;
+    top: 10px;
+    left: 5px;
+    width: 25px;
+    height: auto;
   }
-  .close-icon:before {
-    content: '↓';
-    left: 15px;
-  }
-  .close-icon:after {
-    content: '↓';
-    right: 15px;
+  .close-icon__icon {
+    width: 25px;
+    height: auto;
   }
   .cart__items {
     padding: 0;

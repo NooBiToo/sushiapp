@@ -124,6 +124,10 @@
   }
 }
 @media screen and (max-width: 620px) {
+  .component__items-sets .item {
+    flex-direction: column;
+  }
+
   .item__title {
     font-size: 1.3rem;
   }
@@ -142,7 +146,7 @@
   }
 
   .buy__button {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .component__title {
