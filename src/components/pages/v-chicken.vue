@@ -31,11 +31,14 @@ export default {
       },
     },
   },
+  mounted() {
+    this.GET_CHICKEN();
+  },
   computed: {
     ...mapGetters(["CHICKEN"]),
   },
   methods: {
-    ...mapActions(["ADD_TO_CART"]),
+    ...mapActions(["ADD_TO_CART", "GET_CHICKEN"]),
     addToCart(data) {
       this.ADD_TO_CART(data)
     }

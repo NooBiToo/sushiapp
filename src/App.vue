@@ -9,7 +9,6 @@
 // import TestData from './components/TestData.vue'
 import VHeader from "./components/v-header.vue";
 import VMain from "./components/v-main.vue";
-import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "App",
@@ -19,18 +18,24 @@ export default {
   },
   data() {
     return {};
-  },
-  computed: {
-    ...mapGetters(["DATA", "SETS", "ROLLS", "CHICKEN", "SALADS"]),
-  },
-  methods: {
-    ...mapActions(["GET_DATA"]),
-  },
-  mounted() {
-    this.GET_DATA();
-  },
+  }
 };
 </script>
 
 <style>
+.body {
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+.body::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.body::-webkit-scrollbar-track {
+  background: #fff;
+}
+.body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
 </style>

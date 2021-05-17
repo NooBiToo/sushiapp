@@ -31,11 +31,14 @@ export default {
       },
     },
   },
+  mounted() {
+    this.GET_SETS();
+  },
   computed: {
     ...mapGetters(["SETS"]),
   },
   methods: {
-    ...mapActions(["ADD_TO_CART"]),
+    ...mapActions(["ADD_TO_CART", "GET_SETS"]),
     addToCart(data) {
       this.ADD_TO_CART(data)
     }

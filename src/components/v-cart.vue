@@ -9,7 +9,7 @@
         <span v-if="!CART.length">пуста</span>
       </div>
       <div class="close-icon" v-if="isActive">
-        <img src="/assets/icons/arrow-back.svg" alt="go to Back button">
+        <img src="/assets/icons/arrow-back.svg" alt="go to Back button" />
       </div>
     </div>
     <div class="cart__main">
@@ -23,14 +23,10 @@
           @decrement="decrement(index)"
         />
       </div>
-      <div class="cart__null" v-if="!CART.length">
-        Вы ещё ничего не выбрали
-      </div>
+      <div class="cart__null" v-if="!CART.length">Вы ещё ничего не выбрали</div>
       <template v-if="CART.length">
         <div class="cart__summa">
-          <div class="summa__text">
-            Сумма заказа:
-          </div>
+          <div class="summa__text">Сумма заказа:</div>
           <div class="summa__value">{{ cartTotalCost }}</div>
         </div>
         <div class="cart__promo-code">
@@ -44,6 +40,12 @@
           <button class="promo-code__button" @click="usePromo">
             Применить
           </button>
+        </div>
+        <div class="promo">
+          <span v-if="error">{{ error }}</span>
+          <span v-if="promoDiscount"
+            >Промокод применен <br/>{{ promoData.code }} -{{ promoDiscount }}%</span
+          >
         </div>
         <div class="order">
           <button type="button" class="order__button" @click="goToOrder">
@@ -79,9 +81,10 @@ export default {
           discount: "25",
         },
       ],
-      promoCode: '',
-      promoDiscount: '',
+      promoCode: "",
+      promoDiscount: "",
       promoData: {},
+      error: "",
     };
   },
   directives: { mask },
@@ -95,14 +98,14 @@ export default {
 
       if (this.CART.length) {
         for (let item of this.CART) {
-          result.push(item.price * item.quantity);
+          result.push(item.gsx$price.$t * item.quantity);
         }
-        result = result.reduce(function(sum, el) {
+        result = result.reduce(function (sum, el) {
           return sum + el;
         });
       }
       if (this.promoDiscount.length) {
-        result = result - (result / 100 * this.promoDiscount);
+        result = result - (result / 100) * this.promoDiscount;
       }
       return parseInt(result);
     },
@@ -142,14 +145,23 @@ export default {
       }
     },
     usePromo() {
+      if (this.promoData !== this.promoCode) {
+        this.promoDiscount = "";
+        this.error = "Такого кода не существует";
+      }
+      if (!this.promoCode.length) {
+        this.promoDiscount = "";
+        this.error = "Вы не ввели промокод";
+      }
       for (let promoCode of this.promo) {
         if (this.promoCode == promoCode.code) {
+          this.error = null;
           this.promoDiscount = promoCode.discount;
-          this.promoData = promoCode
-          this.$emit('promoData' ,promoCode);
+          this.promoData = promoCode;
+          this.$emit("promoData", promoCode);
         }
       }
-    }
+    },
   },
 };
 </script>
@@ -184,6 +196,17 @@ export default {
   font-size: 1.3rem;
   border-bottom: 2px solid #efefef;
 }
+.cart__items::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.cart__items::-webkit-scrollbar-track {
+  background: #fff;
+}
+.cart__items::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
 .cart__count {
   display: none;
 }
@@ -208,9 +231,12 @@ export default {
   content: "₽";
   margin-left: 2px;
 }
-
+.promo {
+  padding: 10px 20px;
+  text-align: center;
+}
 .cart__promo-code {
-  padding: 20px;
+  padding: 10px 20px;
 }
 .promo-code__input {
   border: 1px solid #888;
@@ -232,14 +258,14 @@ export default {
   background-color: #fcd83c;
 }
 .promo-code__button:active {
-  transform: scale(1.1);
+  background-color: #dab200;
 }
 .promo-code__input:focus,
 .promo-code__button:focus {
   outline: none;
 }
-
 .order {
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -276,11 +302,7 @@ export default {
     margin: 0;
     height: 100%;
     max-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
+    transition: 0.3s;
   }
   .cart_open {
     bottom: 0;
@@ -294,7 +316,6 @@ export default {
     bottom: 0;
     position: relative;
     height: calc(100% - 57px);
-    width: 600px;
   }
   .cart__title {
     display: flex;
@@ -327,8 +348,8 @@ export default {
   }
   .close-icon {
     position: absolute;
-    top: 10px;
-    left: 5px;
+    top: 15px;
+    left: 10px;
     width: 25px;
     height: auto;
   }

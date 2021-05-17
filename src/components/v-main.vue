@@ -1,9 +1,9 @@
 <template>
   <div class="main">
-    <v-success 
-      v-if="showSuccess"
-      @successClose="successClose" />
-    <router-view />
+    <v-success v-if="showSuccess" @successClose="successClose" />
+    <vue-page-transition name="fade-in-up">
+      <router-view />
+    </vue-page-transition>
     <v-cart @goToOrder="goToOrder" @promoData="promoData" />
     <v-order
       @orderClose="orderClose"
@@ -15,9 +15,13 @@
 </template>
 
 <script>
-import VCart from "./v-cart"
-import VOrder from "./v-order.vue"
-import VSuccess from "./v-success.vue"
+import Vue from 'vue'
+import VCart from "./v-cart";
+import VOrder from "./v-order.vue";
+import VSuccess from "./v-success.vue";
+
+import VuePageTransition from 'vue-page-transition'
+Vue.use(VuePageTransition)
 
 export default {
   name: "VMain",
@@ -26,12 +30,12 @@ export default {
       showModal: false,
       showSuccess: false,
       promo: {},
-    }
+    };
   },
   components: {
     VCart,
     VOrder,
-    VSuccess
+    VSuccess,
   },
   methods: {
     goToOrder() {
@@ -45,14 +49,13 @@ export default {
       this.showSuccess = true;
     },
     successClose() {
-      this.showSuccess = false
+      this.showSuccess = false;
     },
     promoData(data) {
-      this.promo = data
-    }
+      this.promo = data;
+    },
   },
-
-}
+};
 </script>
 
 <style>

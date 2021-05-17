@@ -21,8 +21,6 @@ export default {
     VChicken,
     VSalads
   },
-  props: {
-  },
 }
 </script>
 

@@ -1,19 +1,19 @@
 <template>
-  <div class="item">
+  <div class="item" v-if="item.gsx$active.$t == 'TRUE'">
     <div class="item__image">
-      <img :src="'/assets/images/' + item.image" :alt="item.name" />
+      <img :src="'/assets/images/' + item.gsx$image.$t" :alt="item.gsx$name.$t" />
     </div>
     <div class="item__main">
       <div class="item__title">
-        <h2>{{ item.name }}</h2>
+        <h2>{{ item.gsx$name.$t }}</h2>
       </div>
-      <div class="item__subtitle">{{ item.short_desc }}</div>
+      <div class="item__subtitle">{{ item.gsx$shortdesc.$t }}</div>
       <div class="item__description">
-        {{ item.desc }}
+        {{ item.gsx$desc.$t }}
       </div>
       <div class="item__buy">
         <div class="buy__price">
-          {{ item.price }} ₽<span class="item__weight">/ {{ item.weight }}</span>
+          {{ item.gsx$price.$t }} ₽<span class="item__weight">/ {{ item.gsx$weight.$t }}</span>
         </div>
         <button type="button" class="buy__button" @click="addToCart">
           В корзину
